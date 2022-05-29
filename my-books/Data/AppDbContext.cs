@@ -26,6 +26,7 @@ namespace my_books.Data
                 .WithMany(ba => ba.Book_Authors)
                 .HasForeignKey(ai => ai.AuthorId);
         }
+        public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book_Author> Books_Authors { get; set; }

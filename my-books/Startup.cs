@@ -36,6 +36,7 @@ namespace my_books
             // Configure DbContext
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
             //Configure the Services
+            services.AddTransient<UsersService>();
             services.AddTransient<BooksService>();
             services.AddTransient<PublishersService>();
             services.AddTransient<AuthorsService>();
