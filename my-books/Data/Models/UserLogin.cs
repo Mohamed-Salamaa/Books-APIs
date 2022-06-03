@@ -5,13 +5,10 @@ using System.Threading.Tasks;
 
 namespace my_books.Data
 {
-    public class UserInfoVM
+    public class UserLogin
     {
         public string UserName { get; set; }
+
         public string Password { get; set; }
-        public string EmailAddress { get; set; }
-        public string Role { get; set; }
-        public string SurName { get; set; }
-        public string GivenName { get; set; }
     }
 }

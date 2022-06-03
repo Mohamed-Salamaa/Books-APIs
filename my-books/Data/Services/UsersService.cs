@@ -17,13 +17,13 @@ namespace my_books.Data.Services
         public void AddNewUser(UserInfoVM user)
         {
             var _user = new UserInfo()
-            {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Email = user.Email,
+            {    
                 UserName = user.UserName,
                 Password = user.Password,
-                CreateDate = DateTime.Now,
+                EmailAddress = user.EmailAddress,
+                GivenName = user.GivenName,
+                SurName = user.SurName,
+                Role = user.Role
             };
             _context.UserInfos.Add(_user);
             _context.SaveChanges();
@@ -39,6 +39,11 @@ namespace my_books.Data.Services
         public UserInfo GetUserById(int userId)
         {
             var _user = _context.UserInfos.FirstOrDefault(n => n.Id == userId);
+            return _user;
+        }
+        public UserInfo GetUserByName(string userName, string pass)
+        {
+            var _user = _context.UserInfos.FirstOrDefault(n => n.UserName.ToLower() == userName.ToLower() && n.Password == pass);
             return _user;
         }
 
@@ -58,11 +63,12 @@ namespace my_books.Data.Services
             var _user = _context.UserInfos.FirstOrDefault(user => user.Id == userId);
             if (_user != null)
             {
-                _user.FirstName = user.FirstName;
-                _user.LastName = user.LastName;
-                _user.Email = user.Email;
                 _user.UserName = user.UserName;
                 _user.Password = user.Password;
+                _user.EmailAddress = user.EmailAddress;
+                _user.GivenName = user.GivenName;
+                _user.SurName = user.SurName;
+                _user.Role = user.Role;
                 _context.SaveChanges();
             }
             return _user;
