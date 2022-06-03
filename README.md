@@ -5,6 +5,7 @@ Content:
 1. Book Controller.
 2. Author Controller.
 3. Publisher Controller.
+4. User Controller.
 
 Each Controller has Five End Points Which are:
 1. Add New.
@@ -12,3 +13,5 @@ Each Controller has Five End Points Which are:
 3. Get Specific by ID.
 4. Delete Specific by ID.
 5. Update Specific by ID.
+
+Authorization applied Using Jwt Bearer Token.
